@@ -1,0 +1,9 @@
+[submodule "FasterTransformer"]
+	path = FasterTransformer
+	url = https://github.com/NVIDIA/FasterTransformer.git
+[submodule "fastertransformer_backend"]
+	path = fastertransformer_backend
+	url = https://github.com/triton-inference-server/fastertransformer_backend.git
+[submodule "models/nemo-megatron-gpt-20B"]
+	path = models/nemo-megatron-gpt-20B
+	url = https://huggingface.co/nvidia/nemo-megatron-gpt-20B

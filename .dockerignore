@@ -1,0 +1,5 @@
+*.nemo
+workspace
+models
+NeMo
+.git

@@ -1,0 +1,13 @@
+/build
+/.vscode
+*.so
+*.run
+.clangd
+compile_commands.json
+../all_models/fastertransformer/1/*
+*.pyc
+*.bin
+.cache
+__pycache__
+/cmake-build-*
+/.idea

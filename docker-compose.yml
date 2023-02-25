@@ -1,0 +1,94 @@
+services:
+  nemo-gpt20b-convert:
+    build:
+      dockerfile: Dockerfile
+      args:
+        - FROM_BASE_IMAGE=${FROM_BASE_IMAGE}
+    image: nemo-gpt20b-convert
+    network_mode: host
+    shm_size: 64gb
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    runtime: nvidia
+    working_dir: /workspace
+    volumes:
+      - type: bind
+        source: models/cache
+        target: /root/.cache
+
+      - type: bind
+        source: models
+        target: /models
+
+      - type: bind
+        source: FasterTransformer
+        target: /workspace/FasterTransformer
+
+      - type: bind
+        source: fastertransformer_backend
+        target: /workspace/fastertransformer_backend
+
+      - type: bind
+        source: entrypoint.sh
+        target: /workspace/entrypoint.sh
+    entrypoint: ["/workspace/entrypoint.sh"]
+
+  fastertransformer-triton-server:
+    build:
+      dockerfile: docker/Dockerfile
+      context: fastertransformer_backend
+      args:
+        - TRITON_VERSION=${TRITON_VERSION}
+    image: fastertransformer-triton-server
+    network_mode: host
+    shm_size: 64gb
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    runtime: nvidia
+    working_dir: /workspace
+    volumes:
+      - type: bind
+        source: models/cache
+        target: /root/.cache
+        
+      - type: bind
+        source: models
+        target: /models
+    entrypoint:
+      [
+        "tritonserver",
+        "--model-repository=/models/triton_models/gpt",
+        "--id=gpt-20b",
+        "--allow-metrics=true",
+        "--allow-gpu-metrics=true",
+      ]
+
+  nemo-client:
+    build:
+      dockerfile: Dockerfile
+      args:
+        - FROM_BASE_IMAGE=${FROM_BASE_IMAGE}
+    image: nemo-megatron-gpt
+    network_mode: host
+    shm_size: 64gb
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    volumes:
+      - type: bind
+        source: workspace
+        target: /workspace
+    working_dir: /workspace
+    entrypoint:
+      [
+        "jupyter",
+        "lab",
+        "--NotebookApp.ip=0.0.0.0",
+        "--NotebookApp.port=8888",
+        "--NotebookApp.allow_root=True",
+        "--NotebookApp.token=''",
+        "--NotebookApp.password=''",
+        "--Application.log_level='CRITICAL'",
+      ]
