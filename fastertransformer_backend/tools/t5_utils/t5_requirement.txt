@@ -1,5 +1,0 @@
-transformers
-huggingface_hub
-tokenizers
-SentencePiece
-sacrebleu
