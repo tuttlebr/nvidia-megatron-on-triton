@@ -65,12 +65,12 @@ services:
         "--allow-gpu-metrics=true",
       ]
 
-  nemo-client:
+  fastertransformer-triton-client:
     build:
       dockerfile: Dockerfile
       args:
         - FROM_BASE_IMAGE=${FROM_BASE_IMAGE}
-    image: nemo-megatron-gpt
+    image: fastertransformer-triton-client
     network_mode: host
     shm_size: 64gb
     ulimits:
