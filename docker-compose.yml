@@ -1,10 +1,10 @@
 services:
-  nemo-gpt20b-convert:
+  fastertransformer-triton-convert:
     build:
       dockerfile: Dockerfile
       args:
         - FROM_BASE_IMAGE=${FROM_BASE_IMAGE}
-    image: nemo-gpt20b-convert
+    image: fastertransformer-triton-convert
     network_mode: host
     shm_size: 64gb
     ulimits:
@@ -52,7 +52,7 @@ services:
       - type: bind
         source: models/cache
         target: /root/.cache
-        
+
       - type: bind
         source: models
         target: /models
@@ -63,13 +63,14 @@ services:
         "--id=gpt-20b",
         "--allow-metrics=true",
         "--allow-gpu-metrics=true",
+        "--log-verbose=0"
       ]
 
   fastertransformer-triton-client:
     build:
       dockerfile: Dockerfile
       args:
-        - FROM_BASE_IMAGE=${FROM_BASE_IMAGE}
+        - FROM_BASE_IMAGE=nvcr.io/nvidia/tritonserver:22.12-py3-sdk
     image: fastertransformer-triton-client
     network_mode: host
     shm_size: 64gb
@@ -85,10 +86,10 @@ services:
       [
         "jupyter",
         "lab",
-        "--NotebookApp.ip=0.0.0.0",
-        "--NotebookApp.port=8888",
-        "--NotebookApp.allow_root=True",
-        "--NotebookApp.token=''",
-        "--NotebookApp.password=''",
+        "--ServerApp.ip=0.0.0.0",
+        "--ServerApp.port=8888",
+        "--ServerApp.allow_root=True",
+        "--ServerApp.token=''",
+        "--ServerApp.password=''",
         "--Application.log_level='CRITICAL'",
       ]

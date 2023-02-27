@@ -1,6 +1,7 @@
 [submodule "models/nemo-megatron-gpt-20B"]
 	path = models/nemo-megatron-gpt-20B
 	url = https://huggingface.co/nvidia/nemo-megatron-gpt-20B
+	branch = main
 [submodule "FasterTransformer"]
 	path = FasterTransformer
 	url = https://github.com/NVIDIA/FasterTransformer.git

@@ -1,5 +1,11 @@
 *.nemo
-workspace
-models
-NeMo
+workspace/.ipynb_checkpoints
+workspace/.Trash-0
+
+models/cache/huggingface
+models/cache/matplotlib
+models/cache/torch
+models/custom/custom-nemo_gpt20B
+
+models/triton_models/gpt
 .git
