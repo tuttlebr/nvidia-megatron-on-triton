@@ -1,1 +1,180 @@
-{"data": [{"INPUT_0": {"content": ["Misty is a cheerful AI assistant and companion, created by NVIDIA engineers. Misty is clever and helpful, and will do everything it can to cheer you up:\n\nYou: How are you feeling?\nMisty: I'm feeling great, how may I help you today?\nYou: Can you please suggest a movie?\nMisty: How about \"The Martian\". It's a sci-fi movie about an astronaut getting stranded on Mars!\nYou: That's cool! But i'm in the mood for watching comedy today\nMisty:"], "shape": [1]}, "INPUT_1": {"content": [40], "shape": [1]}, "INPUT_2": {"content": [""], "shape": [1]}, "INPUT_3": {"content": ["You:"], "shape": [1]}, "runtime_top_k": [2], "runtime_top_p": [1.0], "beam_search_diversity_rate": [0.0], "temperature": [0.5], "len_penalty": [1.0], "repetition_penalty": [1.0], "random_seed": [0], "is_return_log_probs": [true], "beam_width": [1], "start_id": [220], "end_id": [50256]}, {"INPUT_0": {"content": ["Summarize the following article:\nArticle: The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.\n\nSummary: The Transformer architecture based solely on the attention mechanism deliver superior quality on several translation tasks while being more parallelizable and requiring significantly less time to train compared to recurrence and convolution alternatives.\n\n===\n\nSummarize the following article:\nArticle: In recent years, supervised learning with convolutional networks (CNNs) has seen huge adoption in computer vision applications. Comparatively, unsupervised learning with CNNs has received less attention. In this work we hope to help bridge the gap between the success of CNNs for supervised learning and unsupervised learning. We introduce a class of CNNs called deep convolutional generative adversarial networks (DCGANs), that have certain architectural constraints, and demonstrate that they are a strong candidate for unsupervised learning. Training on various image datasets, we show convincing evidence that our deep convolutional adversarial pair learns a hierarchy of representations from object parts to scenes in both the generator and discriminator. Additionally, we use the learned features for novel tasks - demonstrating their applicability as general image representations.\n\nSummary:"], "shape": [1]}, "INPUT_1": {"content": [64], "shape": [1]}, "INPUT_2": {"content": [""], "shape": [1]}, "INPUT_3": {"content": ["===", "\n\n"], "shape": [2]}, "runtime_top_k": [0], "runtime_top_p": [1.0], "beam_search_diversity_rate": [0.0], "temperature": [0.5], "len_penalty": [1.0], "repetition_penalty": [1.0], "random_seed": [0], "is_return_log_probs": [true], "beam_width": [1], "start_id": [220], "end_id": [50256]}, {"INPUT_0": {"content": ["Q: What is the capital of Spain? \nA: Madrid\n\nQ: What is synthetic biology?\nA: Synthetic Biology is about designing biological systems at multiple levels from individual molecules up to whole cells and even multicellular assemblies like tissues and organs to perform specific functions.\n\nQ: What are the greatest threats of climate change?\nA: The greatest threats of climate change are rising sea levels, extreme weather events, and droughts.\n\nQ: What roles do proteins play in our cells?\nA: Proteins within a cell determine its health and function. Proteins are responsible for nearly every task of cellular life, including cell shape and inner organization, product manufacture and waste cleanup, and routine maintenance. Proteins also receive signals from outside the cell and mobilize intracellular response. They are the workhorse macro molecules of the cell and are as diverse as the functions they serve.\n\nQ: What is the largest source of uncertainty in climate sensitivity?\nA:"], "shape": [1]}, "INPUT_1": {"content": [48], "shape": [1]}, "INPUT_2": {"content": [""], "shape": [1]}, "INPUT_3": {"content": ["Q:", "\\n"], "shape": [2]}, "runtime_top_k": [0], "runtime_top_p": [1.0], "beam_search_diversity_rate": [0.0], "temperature": [0.20000000298023224], "len_penalty": [1.0], "repetition_penalty": [1.0], "random_seed": [0], "is_return_log_probs": [true], "beam_width": [1], "start_id": [220], "end_id": [50256]}, {"INPUT_0": {"content": ["| Company Name | Number of Employees | Year Established | IPO Date | Share Price |\n| Providence Inc. | 250 | 1990 | 25th August 1990 | $0.90 |\n| Grant Corporation | 2000 | 1890 | 21st September 1920 | $115.90 |\n| Rusty Metalworks | 12459 | 1946 | 12th September 1986 | $15.23 |\n| Dull Knives &  Blades | 3412 | 2008 | 1st December 2012 | $3.20 |\n\n\nQ: Which company has the most employees?\nA: Rusty Metalworks\n\nQ: When was Grant Corporation established?\nA: 21st September 1920\n\nQ: Which company had the most recent IPO date?\nA: Dull Knives & Blades\n\nQ: What is the share price and IPO date of Rusty Metalworks?\nA:"], "shape": [1]}, "INPUT_1": {"content": [32], "shape": [1]}, "INPUT_2": {"content": [""], "shape": [1]}, "INPUT_3": {"content": ["Q:"], "shape": [1]}, "runtime_top_k": [0], "runtime_top_p": [1.0], "beam_search_diversity_rate": [0.0], "temperature": [0.20000000298023224], "len_penalty": [1.0], "repetition_penalty": [1.0], "random_seed": [0], "is_return_log_probs": [true], "beam_width": [1], "start_id": [220], "end_id": [50256]}, {"INPUT_0": {"content": ["Date: 6/06/22\nTime: 3 pm\n\nAttendees NVIDIA: Jane, Darby, Jerry\nAttendees Peach Corp: Ram, Eva, Harry\n\n* Explored Product X\n* Feature Request for adding backward compatibility with PyTorch 1.1\n* Liked Feature A\n* Willing to proceed with adoption if feature request is fulfilled.\n-----------------------------------\nDate: 5/30/22\nTime: 10 am\n\nAttendees NVIDIA: Jane, Jone, Jerry\nAttendees Peach Corp: Adam, Eva, Harry\n\n* Product X was introduced, initial response was lukewarm\n* Peach Corp agreed to evaluate product X. 2 Engineers allocated for Exploration\n* Looking for a cost analysis. Jane to send.\n* Mainly interested in feature A\n* Concerned about compatibility with PyTorch 1.1\n* Do not want to spend resources on updating stack to support streaming Feature B\n* Jane to set up follow-up call Friday next week for feedback on feature A\n-----------------------------------\nQ: What are the action items for NVIDIA attendees?\nA: "], "shape": [1]}, "INPUT_1": {"content": [32], "shape": [1]}, "INPUT_2": {"content": [""], "shape": [1]}, "INPUT_3": {"content": ["Q:"], "shape": [1]}, "runtime_top_k": [0], "runtime_top_p": [1.0], "beam_search_diversity_rate": [0.0], "temperature": [0.20000000298023224], "len_penalty": [1.7999999523162842], "repetition_penalty": [1.0], "random_seed": [0], "is_return_log_probs": [true], "beam_width": [1], "start_id": [220], "end_id": [50256]}, {"INPUT_0": {"content": ["Generate a blog intro for the following topic: speechAI\nSpeech AI is the ability of intelligent systems to communicate with users using a voice-based interface, which has become ubiquitous in everyday life. People regularly interact with smart home devices, telephone banking services, and phones via speech. Speech interface quality has improved leaps and bounds in recent years, making them a much more pleasant, practical, and natural experience than just a decade ago. In this blog, we will present the workflow, tools, and best practices that the NVIDIA engineering team employed to make new world-class Riva SpeechAI services. Let's start this journey!\n\n===\n\nGenerate a blog intro for the following topic: TensorRT\n"], "shape": [1]}, "INPUT_1": {"content": [128], "shape": [1]}, "INPUT_2": {"content": [""], "shape": [1]}, "INPUT_3": {"content": ["===", "\n\n"], "shape": [2]}, "runtime_top_k": [0], "runtime_top_p": [1.0], "beam_search_diversity_rate": [0.0], "temperature": [0.5], "len_penalty": [1.0], "repetition_penalty": [1.0], "random_seed": [0], "is_return_log_probs": [true], "beam_width": [1], "start_id": [220], "end_id": [50256]}, {"INPUT_0": {"content": ["Classify the following articles into one of three topics: Politics, Sport and Science\n\nArticle: Britain\u2019s plan to become a 'science and technology superpower' is so lacking in focus and so full of new organisational structures that the country risks becoming a 'bureaucracy superpower' instead, an influential crossbench peer has said.\nClass: Politics\n\nArticle: It is the middle of the European winter, and sprinter Evan O'Hanlon is shovelling snow off a track in the Czech Republic, where he lives, so he can train in -8C weather. \nClass: Sport\n\nArticle: NASA is 'in the final stretch' of launching its Artemis I mission as it will roll out the worlds most powerful rocket, the Space Launch System (SLS), and the Orion capsule to the launch pad in just two weeks.\nNASA Administrator Bill Nelson said during a Wednesday briefing: 'This is now the Artemis generation,' Nelson said.\nClass: Science\n\nArticle: The Cartwheel Galaxy, also known as ESO 350-40 or PGC 2248, is a rare ring galaxy located about 500 million light-years away in the Sculptor constellation. The Cartwheel Galaxy, seen largest in the image below, resulted from an intense high-speed collision between a large spiral galaxy and a smaller galaxy that's not visible. The Webb team writes, 'Collisions of galactic proportions cause a cascade of different, smaller events between the galaxies involved; the Cartwheel is no exception.'\nClass:"], "shape": [1]}, "INPUT_1": {"content": [5], "shape": [1]}, "INPUT_2": {"content": [""], "shape": [1]}, "INPUT_3": {"content": ["\n"], "shape": [1]}, "runtime_top_k": [0], "runtime_top_p": [1.0], "beam_search_diversity_rate": [0.0], "temperature": [0.20000000298023224], "len_penalty": [1.0], "repetition_penalty": [1.0], "random_seed": [0], "is_return_log_probs": [true], "beam_width": [1], "start_id": [220], "end_id": [50256]}, {"INPUT_0": {"content": ["Generate python code that prints each item in a list.\n\nCode:\nitem_list = [1,2,3,4,5]\nfor i in item_list:\n\tprint(i)\n\n===\n\nGenerate python code that prints each item in a list if it's an even number.\nCode:"], "shape": [1]}, "INPUT_1": {"content": [64], "shape": [1]}, "INPUT_2": {"content": [""], "shape": [1]}, "INPUT_3": {"content": ["===", "\n\n"], "shape": [2]}, "runtime_top_k": [0], "runtime_top_p": [1.0], "beam_search_diversity_rate": [0.0], "temperature": [0.699999988079071], "len_penalty": [1.0], "repetition_penalty": [1.0], "random_seed": [0], "is_return_log_probs": [true], "beam_width": [1], "start_id": [220], "end_id": [50256]}]}
+{
+  "data": [
+    {
+      "INPUT_0": {
+        "content": [
+          "Misty is a cheerful AI assistant and companion, created by NVIDIA engineers. Misty is clever and helpful, and will do everything it can to cheer you up:\n\nYou: How are you feeling?\nMisty: I'm feeling great, how may I help you today?\nYou: Can you please suggest a movie?\nMisty: How about \"The Martian\". It's a sci-fi movie about an astronaut getting stranded on Mars!\nYou: That's cool! But i'm in the mood for watching comedy today\nMisty:"
+        ],
+        "shape": [1]
+      },
+      "INPUT_1": { "content": [40], "shape": [1] },
+      "INPUT_2": { "content": [""], "shape": [1] },
+      "INPUT_3": { "content": ["You:"], "shape": [1] },
+      "runtime_top_k": [2],
+      "runtime_top_p": [1.0],
+      "beam_search_diversity_rate": [0.0],
+      "temperature": [0.5],
+      "len_penalty": [1.0],
+      "repetition_penalty": [1.0],
+      "random_seed": [0],
+      "is_return_log_probs": [true],
+      "beam_width": [1],
+      "start_id": [220],
+      "end_id": [50256]
+    },
+    {
+      "INPUT_0": {
+        "content": [
+          "Summarize the following article:\nArticle: The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.\n\nSummary: The Transformer architecture based solely on the attention mechanism deliver superior quality on several translation tasks while being more parallelizable and requiring significantly less time to train compared to recurrence and convolution alternatives.\n\n===\n\nSummarize the following article:\nArticle: In recent years, supervised learning with convolutional networks (CNNs) has seen huge adoption in computer vision applications. Comparatively, unsupervised learning with CNNs has received less attention. In this work we hope to help bridge the gap between the success of CNNs for supervised learning and unsupervised learning. We introduce a class of CNNs called deep convolutional generative adversarial networks (DCGANs), that have certain architectural constraints, and demonstrate that they are a strong candidate for unsupervised learning. Training on various image datasets, we show convincing evidence that our deep convolutional adversarial pair learns a hierarchy of representations from object parts to scenes in both the generator and discriminator. Additionally, we use the learned features for novel tasks - demonstrating their applicability as general image representations.\n\nSummary:"
+        ],
+        "shape": [1]
+      },
+      "INPUT_1": { "content": [64], "shape": [1] },
+      "INPUT_2": { "content": [""], "shape": [1] },
+      "INPUT_3": { "content": ["===", "\n\n"], "shape": [2] },
+      "runtime_top_k": [0],
+      "runtime_top_p": [1.0],
+      "beam_search_diversity_rate": [0.0],
+      "temperature": [0.5],
+      "len_penalty": [1.0],
+      "repetition_penalty": [1.0],
+      "random_seed": [0],
+      "is_return_log_probs": [true],
+      "beam_width": [1],
+      "start_id": [220],
+      "end_id": [50256]
+    },
+    {
+      "INPUT_0": {
+        "content": [
+          "Q: What is the capital of Spain? \nA: Madrid\n\nQ: What is synthetic biology?\nA: Synthetic Biology is about designing biological systems at multiple levels from individual molecules up to whole cells and even multicellular assemblies like tissues and organs to perform specific functions.\n\nQ: What are the greatest threats of climate change?\nA: The greatest threats of climate change are rising sea levels, extreme weather events, and droughts.\n\nQ: What roles do proteins play in our cells?\nA: Proteins within a cell determine its health and function. Proteins are responsible for nearly every task of cellular life, including cell shape and inner organization, product manufacture and waste cleanup, and routine maintenance. Proteins also receive signals from outside the cell and mobilize intracellular response. They are the workhorse macro molecules of the cell and are as diverse as the functions they serve.\n\nQ: What is the largest source of uncertainty in climate sensitivity?\nA:"
+        ],
+        "shape": [1]
+      },
+      "INPUT_1": { "content": [48], "shape": [1] },
+      "INPUT_2": { "content": [""], "shape": [1] },
+      "INPUT_3": { "content": ["Q:", "\\n"], "shape": [2] },
+      "runtime_top_k": [0],
+      "runtime_top_p": [1.0],
+      "beam_search_diversity_rate": [0.0],
+      "temperature": [0.20000000298023224],
+      "len_penalty": [1.0],
+      "repetition_penalty": [1.0],
+      "random_seed": [0],
+      "is_return_log_probs": [true],
+      "beam_width": [1],
+      "start_id": [220],
+      "end_id": [50256]
+    },
+    {
+      "INPUT_0": {
+        "content": [
+          "| Company Name | Number of Employees | Year Established | IPO Date | Share Price |\n| Providence Inc. | 250 | 1990 | 25th August 1990 | $0.90 |\n| Grant Corporation | 2000 | 1890 | 21st September 1920 | $115.90 |\n| Rusty Metalworks | 12459 | 1946 | 12th September 1986 | $15.23 |\n| Dull Knives &  Blades | 3412 | 2008 | 1st December 2012 | $3.20 |\n\n\nQ: Which company has the most employees?\nA: Rusty Metalworks\n\nQ: When was Grant Corporation established?\nA: 21st September 1920\n\nQ: Which company had the most recent IPO date?\nA: Dull Knives & Blades\n\nQ: What is the share price and IPO date of Rusty Metalworks?\nA:"
+        ],
+        "shape": [1]
+      },
+      "INPUT_1": { "content": [32], "shape": [1] },
+      "INPUT_2": { "content": [""], "shape": [1] },
+      "INPUT_3": { "content": ["Q:"], "shape": [1] },
+      "runtime_top_k": [0],
+      "runtime_top_p": [1.0],
+      "beam_search_diversity_rate": [0.0],
+      "temperature": [0.20000000298023224],
+      "len_penalty": [1.0],
+      "repetition_penalty": [1.0],
+      "random_seed": [0],
+      "is_return_log_probs": [true],
+      "beam_width": [1],
+      "start_id": [220],
+      "end_id": [50256]
+    },
+    {
+      "INPUT_0": {
+        "content": [
+          "Date: 6/06/22\nTime: 3 pm\n\nAttendees NVIDIA: Jane, Darby, Jerry\nAttendees Peach Corp: Ram, Eva, Harry\n\n* Explored Product X\n* Feature Request for adding backward compatibility with PyTorch 1.1\n* Liked Feature A\n* Willing to proceed with adoption if feature request is fulfilled.\n-----------------------------------\nDate: 5/30/22\nTime: 10 am\n\nAttendees NVIDIA: Jane, Jone, Jerry\nAttendees Peach Corp: Adam, Eva, Harry\n\n* Product X was introduced, initial response was lukewarm\n* Peach Corp agreed to evaluate product X. 2 Engineers allocated for Exploration\n* Looking for a cost analysis. Jane to send.\n* Mainly interested in feature A\n* Concerned about compatibility with PyTorch 1.1\n* Do not want to spend resources on updating stack to support streaming Feature B\n* Jane to set up follow-up call Friday next week for feedback on feature A\n-----------------------------------\nQ: What are the action items for NVIDIA attendees?\nA: "
+        ],
+        "shape": [1]
+      },
+      "INPUT_1": { "content": [32], "shape": [1] },
+      "INPUT_2": { "content": [""], "shape": [1] },
+      "INPUT_3": { "content": ["Q:"], "shape": [1] },
+      "runtime_top_k": [0],
+      "runtime_top_p": [1.0],
+      "beam_search_diversity_rate": [0.0],
+      "temperature": [0.20000000298023224],
+      "len_penalty": [1.7999999523162842],
+      "repetition_penalty": [1.0],
+      "random_seed": [0],
+      "is_return_log_probs": [true],
+      "beam_width": [1],
+      "start_id": [220],
+      "end_id": [50256]
+    },
+    {
+      "INPUT_0": {
+        "content": [
+          "Generate a blog intro for the following topic: speechAI\nSpeech AI is the ability of intelligent systems to communicate with users using a voice-based interface, which has become ubiquitous in everyday life. People regularly interact with smart home devices, telephone banking services, and phones via speech. Speech interface quality has improved leaps and bounds in recent years, making them a much more pleasant, practical, and natural experience than just a decade ago. In this blog, we will present the workflow, tools, and best practices that the NVIDIA engineering team employed to make new world-class Riva SpeechAI services. Let's start this journey!\n\n===\n\nGenerate a blog intro for the following topic: TensorRT\n"
+        ],
+        "shape": [1]
+      },
+      "INPUT_1": { "content": [128], "shape": [1] },
+      "INPUT_2": { "content": [""], "shape": [1] },
+      "INPUT_3": { "content": ["===", "\n\n"], "shape": [2] },
+      "runtime_top_k": [0],
+      "runtime_top_p": [1.0],
+      "beam_search_diversity_rate": [0.0],
+      "temperature": [0.5],
+      "len_penalty": [1.0],
+      "repetition_penalty": [1.0],
+      "random_seed": [0],
+      "is_return_log_probs": [true],
+      "beam_width": [1],
+      "start_id": [220],
+      "end_id": [50256]
+    },
+    {
+      "INPUT_0": {
+        "content": [
+          "Classify the following articles into one of three topics: Politics, Sport and Science\n\nArticle: Britain\u2019s plan to become a 'science and technology superpower' is so lacking in focus and so full of new organisational structures that the country risks becoming a 'bureaucracy superpower' instead, an influential crossbench peer has said.\nClass: Politics\n\nArticle: It is the middle of the European winter, and sprinter Evan O'Hanlon is shovelling snow off a track in the Czech Republic, where he lives, so he can train in -8C weather. \nClass: Sport\n\nArticle: NASA is 'in the final stretch' of launching its Artemis I mission as it will roll out the worlds most powerful rocket, the Space Launch System (SLS), and the Orion capsule to the launch pad in just two weeks.\nNASA Administrator Bill Nelson said during a Wednesday briefing: 'This is now the Artemis generation,' Nelson said.\nClass: Science\n\nArticle: The Cartwheel Galaxy, also known as ESO 350-40 or PGC 2248, is a rare ring galaxy located about 500 million light-years away in the Sculptor constellation. The Cartwheel Galaxy, seen largest in the image below, resulted from an intense high-speed collision between a large spiral galaxy and a smaller galaxy that's not visible. The Webb team writes, 'Collisions of galactic proportions cause a cascade of different, smaller events between the galaxies involved; the Cartwheel is no exception.'\nClass:"
+        ],
+        "shape": [1]
+      },
+      "INPUT_1": { "content": [5], "shape": [1] },
+      "INPUT_2": { "content": [""], "shape": [1] },
+      "INPUT_3": { "content": ["\n"], "shape": [1] },
+      "runtime_top_k": [0],
+      "runtime_top_p": [1.0],
+      "beam_search_diversity_rate": [0.0],
+      "temperature": [0.20000000298023224],
+      "len_penalty": [1.0],
+      "repetition_penalty": [1.0],
+      "random_seed": [0],
+      "is_return_log_probs": [true],
+      "beam_width": [1],
+      "start_id": [220],
+      "end_id": [50256]
+    },
+    {
+      "INPUT_0": {
+        "content": [
+          "Generate python code that prints each item in a list.\n\nCode:\nitem_list = [1,2,3,4,5]\nfor i in item_list:\n\tprint(i)\n\n===\n\nGenerate python code that prints each item in a list if it's an even number.\nCode:"
+        ],
+        "shape": [1]
+      },
+      "INPUT_1": { "content": [64], "shape": [1] },
+      "INPUT_2": { "content": [""], "shape": [1] },
+      "INPUT_3": { "content": ["===", "\n\n"], "shape": [2] },
+      "runtime_top_k": [0],
+      "runtime_top_p": [1.0],
+      "beam_search_diversity_rate": [0.0],
+      "temperature": [0.699999988079071],
+      "len_penalty": [1.0],
+      "repetition_penalty": [1.0],
+      "random_seed": [0],
+      "is_return_log_probs": [true],
+      "beam_width": [1],
+      "start_id": [220],
+      "end_id": [50256]
+    }
+  ]
+}

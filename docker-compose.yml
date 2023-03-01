@@ -16,19 +16,15 @@ services:
       - type: bind
         source: models/cache
         target: /root/.cache
-
       - type: bind
         source: models
         target: /models
-
       - type: bind
         source: FasterTransformer
         target: /workspace/FasterTransformer
-
       - type: bind
         source: fastertransformer_backend
         target: /workspace/fastertransformer_backend
-
       - type: bind
         source: entrypoint.sh
         target: /workspace/entrypoint.sh
@@ -52,7 +48,6 @@ services:
       - type: bind
         source: models/cache
         target: /root/.cache
-
       - type: bind
         source: models
         target: /models
@@ -63,20 +58,21 @@ services:
         "--id=gpt-20b",
         "--allow-metrics=true",
         "--allow-gpu-metrics=true",
-        "--log-verbose=0"
+        "--log-verbose=0",
       ]
 
   fastertransformer-triton-client:
     build:
       dockerfile: Dockerfile
       args:
-        - FROM_BASE_IMAGE=nvcr.io/nvidia/tritonserver:22.12-py3-sdk
+        - FROM_BASE_IMAGE=nvcr.io/nvidia/tritonserver:${TRITON_VERSION}-py3
     image: fastertransformer-triton-client
     network_mode: host
     shm_size: 64gb
     ulimits:
       memlock: -1
       stack: 67108864
+    runtime: nvidia
     volumes:
       - type: bind
         source: workspace
@@ -91,5 +87,22 @@ services:
         "--ServerApp.allow_root=True",
         "--ServerApp.token=''",
         "--ServerApp.password=''",
-        "--Application.log_level='CRITICAL'",
+        "--no-browser",
       ]
+
+  fastertransformer-performance-analyzer:
+    image: fastertransformer-triton-server
+    network_mode: host
+    shm_size: 64gb
+    depends_on: 
+      - fastertransformer-triton-server
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    privileged: true
+    volumes:
+      - type: bind
+        source: workspace
+        target: /workspace
+    working_dir: /workspace
+    entrypoint: ["/workspace/run_perf_analyzer.sh"]

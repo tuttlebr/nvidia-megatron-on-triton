@@ -1,0 +1,19 @@
+model_repository: "/models/triton_models/gpt"
+override_output_model_repository: true
+output_model_repository_path: "/workspace/model_analyzer_results"
+export_path: "/workspace/model_analyzer_results"
+checkpoint_directory: "/workspace/model_analyzer_results/checkpoints"
+profile_models:
+  fastertransformer:
+    model_config_parameters:
+      instance_group:
+        - kind: KIND_CPU
+    parameters:
+      concurrency:
+        start: 1
+        stop: 4
+        step: 1
+perf_analyzer_flags:
+  input-data: /workspace/model_analyzer_data.json
+  percentile: 95
+  measurement-interval: 30000

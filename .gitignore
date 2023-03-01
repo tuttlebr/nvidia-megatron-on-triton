@@ -1,6 +1,7 @@
 *.nemo
 workspace/.ipynb_checkpoints
 workspace/.Trash-0
+workspace/model_analyzer_results
 
 models/cache/huggingface
 models/cache/matplotlib
