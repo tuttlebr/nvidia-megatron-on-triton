@@ -78,17 +78,25 @@ services:
         source: workspace
         target: /workspace
     working_dir: /workspace
-    entrypoint:
-      [
-        "jupyter",
-        "lab",
-        "--ServerApp.ip=0.0.0.0",
-        "--ServerApp.port=8888",
-        "--ServerApp.allow_root=True",
-        "--ServerApp.token=''",
-        "--ServerApp.password=''",
-        "--no-browser",
-      ]
+    environment:
+      - PYTHONPATH=/workspace
+      - PYTHONUNBUFFERED=1
+      - GRADIO_ALLOW_FLAGGING=never
+      - GRADIO_ANALYTICS_ENABLED=0
+      - GRADIO_NUM_PORTS=1
+      - GRADIO_SERVER_NAME=0.0.0.0
+      - GRADIO_SERVER_PORT=8889
+    entrypoint: ["python3", "/workspace/app.py"]
+    #   [
+    #     "jupyter",
+    #     "lab",
+    #     "--ServerApp.ip=0.0.0.0",
+    #     "--ServerApp.port=8888",
+    #     "--ServerApp.allow_root=True",
+    #     "--ServerApp.token=''",
+    #     "--ServerApp.password=''",
+    #     "--no-browser",
+    #   ]
 
   fastertransformer-performance-analyzer:
     image: fastertransformer-triton-server
