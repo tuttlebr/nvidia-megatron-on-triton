@@ -1,7 +1,11 @@
-import gradio as gr
-import random
-import time
+import logging
 
+import gradio as gr
+from nemochat import *
+
+logging.basicConfig(format="%(asctime)s %(message)s")
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 md_header = """
 # NeMo Megatron-GPT 20B
@@ -71,27 +75,32 @@ theme = gr.themes.Base(primary_hue="green", text_size="lg").set(
     button_primary_text_color_dark="none",
 )
 
+
 with gr.Blocks(theme=theme, css=css, title="NVIDIA NeMo") as demo:
     gr.Markdown(md_header)
-    chatbot = gr.Chatbot()
+    chat_history = [
+        [
+            (
+                None,
+                "Alex is a cheerful AI assistant and companion, created by NVIDIA engineers. Alex is clever and helpful, and will do everything it can to cheer you up. 🤗",
+            )
+        ]
+    ]
+    chatbot = gr.Chatbot(chat_history[-1])
     msg = gr.Textbox()
     clear = gr.Button("Clear")
-    gr.Markdown(md_footer)
+    # gr.Markdown(md_footer)
 
-    def user(user_message, history):
-        return "", history + [[user_message, None]]
+    def respond(message, chat_history):
+        prompt = parse_history(chat_history) + "You: {}".format(message)
+        inputs = prepare_inputs([[prompt]])
+        result = CLIENT.infer(MODEL, inputs)
+        completions = prepare_outputs(result)[0]
+        chat_history = completions_to_chat_history(completions)
+        logging.info(chat_history[-1])
+        return "", chat_history
 
-    def bot(history):
-        bot_message = random.choice(["How are you?", "I love you...", "I'm very hungry!"])
-        history[-1][1] = ""
-        for character in bot_message:
-            history[-1][1] += character
-            time.sleep(0.05)
-            yield history
-
-    msg.submit(user, [msg, chatbot], [msg, chatbot], queue=False).then(
-        bot, chatbot, chatbot
-    )
+    msg.submit(respond, [msg, chatbot], [msg, chatbot])
     clear.click(lambda: None, None, chatbot, queue=False)
 
 demo.queue().launch(favicon_path="/workspace/content/faviconV2.png")
